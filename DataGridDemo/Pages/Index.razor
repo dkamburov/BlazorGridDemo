@@ -11,11 +11,11 @@
 </style>
 <div class="container vertical">
     <div class="container vertical fill">
-        <IgbGrid Id="grid" AutoGenerate="false" Data="@dataSource" AllowFiltering="true" RowEditable>
+        <IgbGrid Id="grid" AutoGenerate="false" Data="@dataSource" AllowFiltering="true">
             <IgbPaginator PerPage="5">
             </IgbPaginator>
             <IgbColumn Width="50%" Field="Id" />
-            <IgbColumn Width="50%" Field="Name" Groupable="true" />
+            <IgbColumn Width="50%" Field="Name" Groupable="true" Editable="true" />
         </IgbGrid>
     </div>
 </div>
