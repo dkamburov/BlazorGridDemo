@@ -1,0 +1,41 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+<h3>Infragistics Blazor Grid</h3>
+<br />
+<style>
+    #grid {
+        --ig-grid-header-background: green;
+        --ig-grid-header-text-color: #FFF;
+    }
+</style>
+<div class="container vertical">
+    <div class="container vertical fill">
+        <IgbGrid Id="grid" AutoGenerate="false" Data="@dataSource" AllowFiltering="true" RowEditable>
+            <IgbPaginator PerPage="5">
+            </IgbPaginator>
+            <IgbColumn Width="50%" Field="Id" />
+            <IgbColumn Width="50%" Field="Name" Groupable="true" />
+        </IgbGrid>
+    </div>
+</div>
+
+
+@code
+{
+    List<Employee> dataSource = new List<Employee>
+    {
+        new Employee { Id = "1", Name = "James" },
+        new Employee { Id = "2", Name = "John" },
+        new Employee { Id = "3", Name = "Robert" },
+        new Employee { Id = "4", Name = "Anvi" },
+        new Employee { Id = "5", Name = "Jack" },
+        new Employee { Id = "6", Name = "Casie" },
+    };
+
+    public class Employee
+    {
+        public string Id { get; set; }
+        public string Name { get; set; }
+    }
+}
